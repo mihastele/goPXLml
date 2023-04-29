@@ -29,6 +29,7 @@ func NewSwatch(state *apptype.State, color color.Color, swatchIndex int, clickHa
 		clickHandler: clickHandler,
 	}
 	s.ExtendBaseWidget(s)
+	s.Refresh()
 	return s
 }
 
