@@ -8,10 +8,10 @@ import (
 type BrushType = int
 
 type PxCanvasConfig struct {
-	DawingArea     fyne.Size
+	DrawingArea    fyne.Size
 	CanvasOffset   fyne.Position
 	PxRows, PxCols int
-	PxSiye         int
+	PxSize         int
 }
 
 type State struct {
