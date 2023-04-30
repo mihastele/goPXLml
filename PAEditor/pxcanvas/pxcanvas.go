@@ -25,11 +25,11 @@ type PxCanvas struct {
 	showMouse   bool
 }
 
-func (PxCanvas *PxCanvas) Bounds() image.Rectangle {
-	x0 := int(PxCanvas.CanvasOffset.X)
-	y0 := int(PxCanvas.CanvasOffset.Y)
-	x1 := int(PxCanvas.PxCols*PxCanvas.PxSize + int(PxCanvas.CanvasOffset.X))
-	y1 := int(PxCanvas.PxRows*PxCanvas.PxSize + int(PxCanvas.CanvasOffset.Y))
+func (pxCanvas *PxCanvas) Bounds() image.Rectangle {
+	x0 := int(pxCanvas.CanvasOffset.X)
+	y0 := int(pxCanvas.CanvasOffset.Y)
+	x1 := int(pxCanvas.PxCols*pxCanvas.PxSize + int(pxCanvas.CanvasOffset.X))
+	y1 := int(pxCanvas.PxRows*pxCanvas.PxSize + int(pxCanvas.CanvasOffset.Y))
 	return image.Rect(x0, y0, x1, y1)
 
 }
