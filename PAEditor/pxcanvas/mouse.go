@@ -13,6 +13,9 @@ func (pxCanvas *PxCanvas) Scrolled(ev *fyne.ScrollEvent) {
 
 // Hoverable interface
 func (pxCanvas *PxCanvas) MouseMoved(ev *desktop.MouseEvent) {
+	if x, y := pxCanvas.MouseToCanvasXY(ev); x != nil && y != nil {
+		brush.TryBrush(pxCanvas.appState, pxCanvas, ev)
+	}
 	pxCanvas.TryPan(pxCanvas.mouseState.previousCoord, ev)
 	pxCanvas.Refresh()
 	pxCanvas.mouseState.previousCoord = &ev.PointEvent
