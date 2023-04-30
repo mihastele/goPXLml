@@ -2,6 +2,7 @@ package apptype
 
 import (
 	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/driver/desktop"
 	"image/color"
 )
 
@@ -23,4 +24,9 @@ type State struct {
 
 func (state *State) setFilePath(path string) {
 	state.FilePath = path
+}
+
+type Brushable interface {
+	SetColor(c color.Color, x, y int)
+	MouseToCanvasXY(ev *desktop.MouseEvent) (*int, *int)
 }
